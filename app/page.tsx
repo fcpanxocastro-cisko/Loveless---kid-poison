@@ -42,7 +42,7 @@ export default function Home() {
 
       <header className="topbar">
         <span className="brand">POISON KID</span>
-        <span>13 · 08 · 2026</span>
+        <span className="topbarDate">13 · 08 · 2026</span>
       </header>
 
       <section className="hero">
@@ -50,8 +50,9 @@ export default function Home() {
           <p className="overline">POISON KID PRESENTA</p>
           <h1>LOVELESS</h1>
           <p className="summary">
-            Una escucha antes del estreno. Haz el pre-save y participa por una
-            de las 70 invitaciones al preview listening en Providencia.
+            Este 13 de agosto, al momento de estrenarse LOVELESS, viviremos una
+            escucha privada en Providencia. Haz el pre-save y participa por una
+            de las 70 invitaciones.
           </p>
           <button className="outlineButton" onClick={() => setModalOpen(true)}>
             ENTRAR A LOVELESS <span>↗</span>
@@ -93,19 +94,22 @@ export default function Home() {
               <>
                 <div className="modalTopline">
                   <p className="redLabel">POISON KID · EXPERIENCIA LOVELESS</p>
-                  <span>13.08.26</span>
+                  <span className="modalYear">2026</span>
                 </div>
-                <h2 id="dialog-title">ESCUCHA<br />LOVELESS<br /><em>ANTES QUE NADIE.</em></h2>
+                <div className="releaseDate" aria-label="13 de agosto de 2026">
+                  <span>13</span><i>·</i><span>08</span><i>·</i><span>26</span>
+                </div>
+                <p className="releaseMoment">ESCUCHA PRIVADA · EL MISMO DÍA DEL ESTRENO</p>
+                <h2 id="dialog-title">LOVELESS<br /><em>SALE Y LO<br />ESCUCHAMOS JUNTOS.</em></h2>
                 <p className="intro">
-                  Familia, les tengo una noticia. Haz el <b>PRE-SAVE de LOVELESS</b> y
-                  participa por una de las 70 invitaciones para una escucha privada
-                  en Providencia, Santiago. Vamos a compartir, escuchar LOVELESS
-                  juntos y vivir una experiencia única antes del estreno.
+                  El <b>13 de agosto</b>, al momento en que <b>LOVELESS se estrene
+                  oficialmente</b>, nos reuniremos en Providencia, Santiago, para
+                  escucharlo juntos por primera vez.
                 </p>
                 <p className="intro secondaryCopy">
-                  Guarda el lanzamiento y registra tu nombre y correo. Las
-                  inscripciones están abiertas; sortearemos los 70 cupos y las
-                  personas seleccionadas recibirán su invitación por correo.
+                  Haz el <b>PRE-SAVE de LOVELESS</b> y registra tu nombre y correo
+                  para participar en el sorteo de una de las <b>70 invitaciones</b>.
+                  Las personas seleccionadas recibirán todos los detalles por correo.
                 </p>
 
                 <div className="steps">
