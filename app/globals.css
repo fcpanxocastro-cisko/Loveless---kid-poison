@@ -36,7 +36,7 @@ footer { display:flex; justify-content:space-between; gap:24px; padding:20px 4vw
 .close { position:absolute; z-index:3; right:17px; top:12px; width:36px;height:36px;border:1px solid #27201d;background:#eee9df;color:#17110f;font-size:25px; line-height:1; transition:.2s; }
 .close:hover { background:#17110f;color:#eee9df;transform:rotate(90deg); }
 .modalTopline { position:relative;z-index:1;display:flex;justify-content:space-between;gap:20px;padding-right:42px; }
-.modalTopline>span { color:#555;font-size:9px;font-weight:900;letter-spacing:.18em; }
+.modalTopline>span { color:#3b3430;font-size:13px;font-weight:950;letter-spacing:.15em; }
 .modal h2 { position:relative;z-index:1;max-width:560px; margin:18px 0 22px; font-size:clamp(42px,6.2vw,68px); line-height:.79; letter-spacing:-.065em; font-weight:1000; }
 .modal h2 em { color:var(--red);font-style:normal;text-shadow:2px 2px 0 #d3c5b5; }
 .intro { position:relative;z-index:1;margin:0 0 13px; line-height:1.55; color:#302b28; }
