@@ -47,26 +47,28 @@ export default function Home() {
 
       <section className="hero">
         <div className="copy">
-          <p className="overline">NUEVO LANZAMIENTO</p>
+          <p className="overline">POISON KID PRESENTA</p>
           <h1>LOVELESS</h1>
           <p className="summary">
-            Pre-save exclusivo y sorteo de 70 invitaciones para el preview
-            listening en Providencia, Santiago.
+            Una escucha antes del estreno. Haz el pre-save y participa por una
+            de las 70 invitaciones al preview listening en Providencia.
           </p>
           <button className="outlineButton" onClick={() => setModalOpen(true)}>
-            PARTICIPAR AHORA
+            ENTRAR A LOVELESS <span>↗</span>
           </button>
         </div>
 
         <div className="portraitArea">
+          <span className="ghostWord" aria-hidden="true">LOVELESS</span>
           <img src="/poison-kid.jpg" alt="Poison Kid" className="portrait" />
-          <div className="badge"><b>70</b><span>INVITACIONES</span></div>
+          <div className="badge"><b>70</b><span>CUPOS EN SORTEO</span></div>
         </div>
       </section>
 
       <footer>
         <span>PREVIEW LISTENING</span>
         <span>PROVIDENCIA · SANTIAGO</span>
+        <span className="byDistrikt">BY DISTRIKT®</span>
       </footer>
 
       {modalOpen && (
@@ -77,7 +79,7 @@ export default function Home() {
             {state === "success" ? (
               <div className="success">
                 <span className="check">✓</span>
-                <p className="redLabel">REGISTRO CONFIRMADO</p>
+                <p className="redLabel">LOVELESS · REGISTRO CONFIRMADO</p>
                 <h2>YA ESTÁS PARTICIPANDO.</h2>
                 <p>
                   Sortearemos 70 invitaciones. Si resultas seleccionado,
@@ -89,11 +91,21 @@ export default function Home() {
               </div>
             ) : (
               <>
-                <p className="redLabel">EXPERIENCIA PRIVADA · 70 INVITACIONES</p>
-                <h2 id="dialog-title">ESCUCHA LOVELESS ANTES QUE NADIE.</h2>
+                <div className="modalTopline">
+                  <p className="redLabel">POISON KID · EXPERIENCIA LOVELESS</p>
+                  <span>13.08.26</span>
+                </div>
+                <h2 id="dialog-title">ESCUCHA<br />LOVELESS<br /><em>ANTES QUE NADIE.</em></h2>
                 <p className="intro">
-                  Haz el pre-save y registra tus datos para participar en el
-                  sorteo del preview listening de Poison Kid.
+                  Familia, les tengo una noticia. Haz el <b>PRE-SAVE de LOVELESS</b> y
+                  participa por una de las 70 invitaciones para una escucha privada
+                  en Providencia, Santiago. Vamos a compartir, escuchar LOVELESS
+                  juntos y vivir una experiencia única antes del estreno.
+                </p>
+                <p className="intro secondaryCopy">
+                  Guarda el lanzamiento y registra tu nombre y correo. Las
+                  inscripciones están abiertas; sortearemos los 70 cupos y las
+                  personas seleccionadas recibirán su invitación por correo.
                 </p>
 
                 <div className="steps">
@@ -102,12 +114,12 @@ export default function Home() {
                 </div>
 
                 {!presaveDone ? (
-                  <button className="redButton" onClick={goToPresave}>
+                  <button className="coverButton" onClick={goToPresave}>
                     HACER PRE-SAVE DE LOVELESS <span>↗</span>
                   </button>
                 ) : (
                   <form onSubmit={register}>
-                    <p className="returnNotice">Tu formulario ya está listo. Completa el pre-save y vuelve a esta pestaña para registrarte.</p>
+                    <p className="returnNotice">Completa el pre-save y vuelve a esta pestaña. Tu registro ya está desbloqueado.</p>
                     <label>
                       Nombre
                       <input name="name" autoComplete="name" required minLength={2} placeholder="Tu nombre" />
@@ -116,8 +128,9 @@ export default function Home() {
                       Correo electrónico
                       <input name="email" type="email" autoComplete="email" required placeholder="tu@correo.com" />
                     </label>
-                    <button className="redButton" disabled={state === "sending"}>
+                    <button className="coverButton" disabled={state === "sending"}>
                       {state === "sending" ? "REGISTRANDO..." : "PARTICIPAR EN EL SORTEO"}
+                      <span>→</span>
                     </button>
                     {state === "error" && <p className="formError" role="alert">{error}</p>}
                   </form>
@@ -128,6 +141,7 @@ export default function Home() {
                   Registrarse no garantiza una invitación; los 70 seleccionados
                   serán notificados por correo.
                 </p>
+                <p className="modalSignature">BY DISTRIKT®</p>
               </>
             )}
           </section>
