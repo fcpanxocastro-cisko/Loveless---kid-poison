@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root { --black:#030608; --blue:#071720; --white:#f2f3ef; --red:#b91f19; }
+* { box-sizing:border-box; }
+html,body { margin:0; background:var(--black); color:var(--white); }
+body { font-family:Arial,Helvetica,sans-serif; }
+button,input { font:inherit; }
+button { cursor:pointer; }
+.experience { min-height:100svh; position:relative; overflow:hidden; display:flex; flex-direction:column; background:radial-gradient(circle at 74% 38%,#17323e 0,#07151d 34%,#020405 76%); }
+.texture { position:absolute; inset:0; opacity:.13; background:url("/loveless.jpg") center/cover; mix-blend-mode:soft-light; filter:grayscale(1) contrast(1.45); pointer-events:none; }
+.topbar,.hero,footer { position:relative; z-index:1; }
+.topbar { padding:27px 4vw; display:flex; justify-content:space-between; border-bottom:1px solid #ffffff20; font-size:11px; letter-spacing:.22em; font-weight:800; color:#c8d1d3; }
+.brand { color:#fff; font-size:15px; }
+.hero { flex:1; width:min(1450px,100%); margin:auto; padding:4vh 4vw 0; display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; }
+.copy { z-index:2; padding-bottom:7vh; }
+.overline,.redLabel { margin:0; color:#e14d46; font-size:10px; letter-spacing:.27em; font-weight:900; }
+h1 { margin:28px 0 34px; font-size:clamp(80px,12vw,188px); line-height:.73; font-weight:1000; letter-spacing:-.08em; transform:scaleX(.72); transform-origin:left; text-shadow:9px 9px 0 #8d1814; }
+.summary { max-width:510px; line-height:1.65; color:#bbc5c8; }
+.outlineButton,.darkButton { margin-top:24px; padding:17px 24px; border:1px solid #fff; background:transparent; color:#fff; letter-spacing:.14em; font-size:10px; font-weight:900; transition:.2s; }
+.outlineButton:hover { background:#fff;color:#080b0d; }
+.portraitArea { position:relative; align-self:end; height:min(78vh,850px); display:flex; justify-content:center; }
+.portrait { height:100%; max-width:100%; object-fit:contain; object-position:bottom; filter:saturate(.7) contrast(1.06); mask-image:linear-gradient(#000 82%,transparent 100%); }
+.badge { position:absolute; right:5%; top:14%; width:112px; height:112px; border-radius:50%; background:var(--red); display:flex; flex-direction:column; align-items:center; justify-content:center; transform:rotate(9deg); box-shadow:0 0 45px #b91f1966; }
+.badge b { font-size:40px; line-height:.8; }.badge span { font-size:8px; margin-top:8px; letter-spacing:.14em; font-weight:900; }
+footer { display:flex; justify-content:space-between; gap:24px; padding:20px 4vw; border-top:1px solid #ffffff20; color:#9aa6aa; font-size:9px; letter-spacing:.24em; }
+.backdrop { position:fixed; z-index:20; inset:0; padding:18px; display:grid; place-items:center; background:#000c; backdrop-filter:blur(11px); }
+.modal { position:relative; width:min(610px,100%); max-height:94svh; overflow-y:auto; overflow-x:hidden; padding:clamp(30px,5vw,55px); background:#f2f0eb; color:#111; border-top:7px solid var(--red); box-shadow:0 30px 100px #000; }
+.modal:after { content:""; position:absolute; right:-40px; bottom:-40px; width:170px; height:170px; background:url("/loveless.jpg") center/cover; opacity:.11; transform:rotate(-10deg); }
+.close { position:absolute; z-index:3; right:17px; top:12px; border:0; background:none; font-size:36px; line-height:1; }
+.modal h2 { max-width:500px; margin:16px 0 20px; font-size:clamp(34px,6vw,57px); line-height:.91; letter-spacing:-.055em; font-weight:950; }
+.intro { margin-bottom:24px; line-height:1.6; color:#4a4a4a; }
+.steps { display:grid; grid-template-columns:1fr 1fr; border:1px solid #c8c8c8; margin-bottom:17px; }
+.step { padding:13px 15px; display:flex; gap:10px; color:#999; font-size:10px; letter-spacing:.12em; }
+.step+.step { border-left:1px solid #c8c8c8; }.step.current { color:#111;background:#dfddd8; }.step.done { color:#fff;background:#171717; }.step span { color:var(--red); }
+.redButton { position:relative; z-index:1; width:100%; min-height:58px; padding:15px 18px; border:0; display:flex; align-items:center; justify-content:space-between; background:var(--red); color:#fff; font-size:11px; font-weight:900; letter-spacing:.11em; }
+.redButton:hover { background:#921713; }.redButton:disabled { opacity:.65;cursor:wait; }
+form { display:grid; gap:14px; }
+.returnNotice { margin:0 0 2px;padding:11px 13px;background:#e2dfd8;color:#333;font-size:11px;line-height:1.45;border-left:3px solid var(--red); }
+label { font-size:9px; text-transform:uppercase; font-weight:900; letter-spacing:.15em; }
+input { width:100%; min-height:52px; display:block; margin-top:8px; padding:0 15px; background:#fff; border:1px solid #c7c7c7; outline:none; }
+input:focus { border-color:var(--red);box-shadow:0 0 0 2px #b91f1920; }
+.terms { position:relative;z-index:1;margin:16px 0 0;color:#777;font-size:9px;line-height:1.55; }
+.formError { margin:0;color:#a71915;font-size:12px; }
+.success { position:relative;z-index:1;text-align:center;padding:16px 0; }
+.check { display:grid;place-items:center;width:68px;height:68px;margin:0 auto 24px;border-radius:50%;background:var(--red);color:#fff;font-size:34px; }
+.success .redLabel { margin-bottom:16px; }.success h2 { margin-inline:auto; }.success>p:not(.redLabel) { color:#555;line-height:1.65; }
+.darkButton { border-color:#111;color:#111; }.darkButton:hover { background:#111;color:#fff; }
+@media(max-width:800px) {
+  .topbar { padding:20px; }.hero { grid-template-columns:1fr;padding:42px 20px 0;align-items:start; }.copy { padding:0; }.summary { max-width:300px;font-size:13px; }.outlineButton { display:none; }
+  h1 { margin:23px 0 20px;font-size:27vw; }.portraitArea { position:absolute;z-index:-1;right:-21%;bottom:0;width:105%;height:66svh;justify-content:flex-end; }.portrait { opacity:.84; }.badge { right:24%;top:11%;width:84px;height:84px; }.badge b { font-size:30px; }.badge span { font-size:6px; }
+  footer { margin-top:auto;display:block;line-height:2.1; }.backdrop { padding:0;align-items:end; }.modal { width:100%;max-height:92svh;padding:36px 23px 28px; }.modal h2 { font-size:38px; }.intro { font-size:14px; }
+}
+@media(prefers-reduced-motion:reduce) { * { transition:none!important; } }
+
+.adminShell { min-height:100svh;padding:42px;overflow:auto;background:#090b0d;color:#f4f2ed; }
+.adminHeader { display:flex;justify-content:space-between;align-items:end;max-width:1250px;margin:auto; }
+.adminHeader h1,.loginCard h1 { margin:8px 0;font-size:45px;letter-spacing:-.05em; }
+.adminHeader a { color:#fff;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:4px; }
+.adminKicker { margin:0;color:#e34b44;font-size:10px;font-weight:900;letter-spacing:.22em; }
+.metrics { max-width:1250px;margin:34px auto 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px; }
+.metrics article { padding:22px;border:1px solid #ffffff24;background:#121619;display:flex;flex-direction:column;gap:8px; }
+.metrics span { color:#929b9e;font-size:9px;letter-spacing:.17em; }.metrics b { font-size:34px; }
+.adminActions { max-width:1250px;margin:0 auto 18px;display:grid;grid-template-columns:1fr auto auto;gap:10px; }
+.adminActions input { margin:0;background:#15191c;color:#fff;border-color:#ffffff2b; }
+.adminActions button,.loginCard button { border:1px solid #ffffff34;background:#15191c;color:#fff;padding:0 18px;font-size:10px;font-weight:900;letter-spacing:.1em; }
+.adminActions .drawButton,.loginCard button { background:#b91f19;border-color:#b91f19; }.adminActions button:disabled { opacity:.45; }
+.tableWrap { max-width:1250px;margin:auto;overflow:auto;border:1px solid #ffffff22; }
+table { width:100%;border-collapse:collapse;min-width:760px;background:#101315; }
+th,td { padding:15px 18px;text-align:left;border-bottom:1px solid #ffffff16;font-size:13px; }
+th { color:#9ba4a7;font-size:9px;letter-spacing:.15em; }.winnerRow { background:#3d1110; }
+.loginShell { display:grid;place-items:center; }
+.loginCard { width:min(430px,100%);padding:34px;background:#f0eee9;color:#111;display:grid;gap:18px; }
+.loginCard label { color:#333; }.loginCard button { min-height:52px; }.adminError { color:#a71915;margin:0;font-size:12px; }
+@media(max-width:700px) {
+  .adminShell { padding:24px 16px; }.adminHeader h1 { font-size:36px; }.metrics { grid-template-columns:1fr 1fr; }.metrics article:last-child { grid-column:span 2; }
+  .adminActions { grid-template-columns:1fr 1fr; }.adminActions input { grid-column:span 2; }.adminActions button { min-height:48px; }
+}
