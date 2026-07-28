@@ -100,16 +100,20 @@ export default function Home() {
                   <span>13</span><i>·</i><span>08</span><i>·</i><span>26</span>
                 </div>
                 <p className="releaseMoment">ESCUCHA PRIVADA · EL MISMO DÍA DEL ESTRENO</p>
-                <h2 id="dialog-title">LOVELESS<br /><em>SALE Y LO<br />ESCUCHAMOS JUNTOS.</em></h2>
+                <h2 id="dialog-title">ESCUCHA<br />PRIVADA DE<br /><em>LOVELESS.</em></h2>
                 <p className="intro">
-                  El <b>13 de agosto</b>, al momento en que <b>LOVELESS se estrene
-                  oficialmente</b>, nos reuniremos en Providencia, Santiago, para
-                  escucharlo juntos por primera vez.
+                  Familia, tengo una noticia. Si haces el <b>PRE-SAVE de LOVELESS</b>,
+                  podrás participar por una de las <b>70 invitaciones</b> para una
+                  escucha privada que realizaremos el mismo <b>13 de agosto</b>,
+                  justo al momento del estreno oficial.
                 </p>
                 <p className="intro secondaryCopy">
-                  Haz el <b>PRE-SAVE de LOVELESS</b> y registra tu nombre y correo
-                  para participar en el sorteo de una de las <b>70 invitaciones</b>.
-                  Las personas seleccionadas recibirán todos los detalles por correo.
+                  Vamos a compartir, escuchar LOVELESS juntos por primera vez y vivir
+                  una experiencia única. Si quieres participar, entra al enlace,
+                  guarda el lanzamiento y deja tus datos. Las inscripciones son
+                  abiertas y luego sortearemos a las 70 personas seleccionadas,
+                  quienes recibirán su invitación por correo. Nos vemos pronto.
+                  Gracias por el apoyo y bienvenidos al mundo de LOVELESS.
                 </p>
 
                 <div className="steps">
