@@ -98,18 +98,15 @@ export default function Home() {
                 </div>
                 <h2 id="dialog-title">ESCUCHA<br />LOVELESS</h2>
                 <p className="intro">
-                  Familia, tengo una noticia. Si haces el <b>PRE-SAVE de LOVELESS</b>,
-                  podrás participar por una de las <b>70 invitaciones</b> para una
-                  escucha privada que realizaremos el mismo <b>13 de agosto</b>,
-                  justo al momento del estreno oficial.
+                  Familia, les tengo una noticia. Haz el <b>PRE-SAVE de LOVELESS</b> y
+                  participa por una de las 70 invitaciones para una escucha privada
+                  en Providencia, Santiago. Vamos a compartir, escuchar LOVELESS
+                  juntos y vivir una experiencia única.
                 </p>
                 <p className="intro secondaryCopy">
-                  Vamos a compartir, escuchar LOVELESS juntos por primera vez y vivir
-                  una experiencia única. Si quieres participar, entra al enlace,
-                  guarda el lanzamiento y deja tus datos. Las inscripciones son
-                  abiertas y luego sortearemos a las 70 personas seleccionadas,
-                  quienes recibirán su invitación por correo. Nos vemos pronto.
-                  Gracias por el apoyo y bienvenidos al mundo de LOVELESS.
+                  Guarda el lanzamiento y registra tu nombre y correo. Las
+                  inscripciones están abiertas; sortearemos los 70 cupos y las
+                  personas seleccionadas recibirán su invitación por correo.
                 </p>
 
                 <div className="steps">
