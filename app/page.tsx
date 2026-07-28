@@ -94,13 +94,9 @@ export default function Home() {
               <>
                 <div className="modalTopline">
                   <p className="redLabel">POISON KID · EXPERIENCIA LOVELESS</p>
-                  <span className="modalYear">2026</span>
+                  <span>13.08.26</span>
                 </div>
-                <div className="releaseDate" aria-label="13 de agosto de 2026">
-                  <span>13</span><i>·</i><span>08</span><i>·</i><span>26</span>
-                </div>
-                <p className="releaseMoment">ESCUCHA PRIVADA · EL MISMO DÍA DEL ESTRENO</p>
-                <h2 id="dialog-title">ESCUCHA<br />PRIVADA DE<br /><em>LOVELESS.</em></h2>
+                <h2 id="dialog-title">ESCUCHA<br />LOVELESS</h2>
                 <p className="intro">
                   Familia, tengo una noticia. Si haces el <b>PRE-SAVE de LOVELESS</b>,
                   podrás participar por una de las <b>70 invitaciones</b> para una
