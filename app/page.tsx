@@ -94,9 +94,11 @@ export default function Home() {
               <>
                 <div className="modalTopline">
                   <p className="redLabel">POISON KID · EXPERIENCIA LOVELESS</p>
-                  <span>13.08.26</span>
                 </div>
-                <h2 id="dialog-title">ESCUCHA<br />LOVELESS</h2>
+                <div className="eventDate" aria-label="13 de agosto de 2026">
+                  <span>13</span><i>·</i><span>08</span><i>·</i><span>26</span>
+                </div>
+                <h2 id="dialog-title">ESCUCHA<br /><em>LOVELESS</em></h2>
                 <p className="intro">
                   Familia, les tengo una noticia. Haz el <b>PRE-SAVE de LOVELESS</b> y
                   participa por una de las 70 invitaciones para una escucha privada
