@@ -2,6 +2,11 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
+type Analytics = {
+  visitors: number;
+  presaveClicks: number;
+};
+
 type Registration = {
   id: number;
   name: string;
@@ -14,6 +19,7 @@ type Registration = {
 export default function AdminPage() {
   const [authorized, setAuthorized] = useState<boolean | null>(null);
   const [rows, setRows] = useState<Registration[]>([]);
+  const [analytics, setAnalytics] = useState<Analytics>({ visitors: 0, presaveClicks: 0 });
   const [query, setQuery] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -21,8 +27,9 @@ export default function AdminPage() {
   async function load() {
     const response = await fetch("/api/admin/registrations", { cache: "no-store" });
     if (response.status === 401) return setAuthorized(false);
-    const data = (await response.json()) as { registrations: Registration[] };
+    const data = (await response.json()) as { registrations: Registration[]; analytics: Analytics };
     setRows(data.registrations);
+    setAnalytics(data.analytics ?? { visitors: 0, presaveClicks: 0 });
     setAuthorized(true);
   }
 
@@ -89,6 +96,8 @@ export default function AdminPage() {
         <a href="/">Ver landing</a>
       </header>
       <section className="metrics">
+        <article><span>VISITANTES ÚNICOS</span><b>{analytics.visitors}</b></article>
+        <article><span>CLICS EN PRE-SAVE</span><b>{analytics.presaveClicks}</b></article>
         <article><span>REGISTROS</span><b>{rows.length}</b></article>
         <article><span>GANADORES</span><b>{winners}</b></article>
         <article><span>DISPONIBLES</span><b>{Math.min(rows.length, 70)}</b></article>
