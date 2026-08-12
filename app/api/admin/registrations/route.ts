@@ -16,6 +16,7 @@ export async function GET(request: Request) {
       COUNT(*) FILTER (WHERE event_type = 'page_view')::int AS "visitors",
       COUNT(*) FILTER (WHERE event_type = 'presave_click')::int AS "presaveClicks"
     FROM analytics_events
+    WHERE visitor_id NOT LIKE 'codex-verification-%'
   `;
   return Response.json({
     registrations: rows,
