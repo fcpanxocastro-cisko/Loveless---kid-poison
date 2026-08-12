@@ -11,5 +11,14 @@ export async function GET(request: Request) {
     FROM registrations
     ORDER BY created_at DESC
   `;
-  return Response.json({ registrations: rows });
+  const analytics = await sql`
+    SELECT
+      COUNT(*) FILTER (WHERE event_type = 'page_view')::int AS "visitors",
+      COUNT(*) FILTER (WHERE event_type = 'presave_click')::int AS "presaveClicks"
+    FROM analytics_events
+  `;
+  return Response.json({
+    registrations: rows,
+    analytics: analytics[0] ?? { visitors: 0, presaveClicks: 0 },
+  });
 }
