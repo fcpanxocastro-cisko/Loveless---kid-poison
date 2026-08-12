@@ -75,7 +75,7 @@ input:focus { border-color:var(--red);box-shadow:0 0 0 2px #b91f1920; }
 .adminHeader h1,.loginCard h1 { margin:8px 0;font-size:45px;letter-spacing:-.05em; }
 .adminHeader a { color:#fff;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:4px; }
 .adminKicker { margin:0;color:#e34b44;font-size:10px;font-weight:900;letter-spacing:.22em; }
-.metrics { max-width:1250px;margin:34px auto 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px; }
+.metrics { max-width:1250px;margin:34px auto 20px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px; }
 .metrics article { padding:22px;border:1px solid #ffffff24;background:#121619;display:flex;flex-direction:column;gap:8px; }
 .metrics span { color:#929b9e;font-size:9px;letter-spacing:.17em; }.metrics b { font-size:34px; }
 .adminActions { max-width:1250px;margin:0 auto 18px;display:grid;grid-template-columns:1fr auto auto;gap:10px; }
@@ -93,3 +93,5 @@ th { color:#9ba4a7;font-size:9px;letter-spacing:.15em; }.winnerRow { background:
   .adminShell { padding:24px 16px; }.adminHeader h1 { font-size:36px; }.metrics { grid-template-columns:1fr 1fr; }.metrics article:last-child { grid-column:span 2; }
   .adminActions { grid-template-columns:1fr 1fr; }.adminActions input { grid-column:span 2; }.adminActions button { min-height:48px; }
 }
+
+@media(min-width:701px) and (max-width:1050px) { .metrics { grid-template-columns:repeat(3,1fr); } }
