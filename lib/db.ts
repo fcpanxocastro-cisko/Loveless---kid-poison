@@ -18,5 +18,14 @@ export async function ensureSchema() {
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
+  await sql`
+    CREATE TABLE IF NOT EXISTS analytics_events (
+      id BIGSERIAL PRIMARY KEY,
+      event_type TEXT NOT NULL CHECK (event_type IN ('page_view', 'presave_click')),
+      visitor_id TEXT NOT NULL,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      UNIQUE (event_type, visitor_id)
+    )
+  `;
   return sql;
 }
