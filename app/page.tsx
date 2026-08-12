@@ -1,8 +1,26 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 const PRESAVE_URL = "https://vm.group/loveless-skj-y";
+const VISITOR_KEY = "loveless_visitor_id";
+
+function visitorId() {
+  const existing = localStorage.getItem(VISITOR_KEY);
+  if (existing) return existing;
+  const value = crypto.randomUUID();
+  localStorage.setItem(VISITOR_KEY, value);
+  return value;
+}
+
+function track(type: "page_view" | "presave_click") {
+  void fetch("/api/track", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ type, visitorId: visitorId() }),
+    keepalive: true,
+  });
+}
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(true);
@@ -10,8 +28,13 @@ export default function Home() {
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
+  useEffect(() => {
+    track("page_view");
+  }, []);
+
   function goToPresave() {
     setPresaveDone(true);
+    track("presave_click");
     window.open(PRESAVE_URL, "_blank", "noopener,noreferrer");
   }
 
